@@ -122,7 +122,7 @@ def main():
 
     num_classes = 3
 
-    device_name = 'cpu'
+    device_name = 'cuda:0'
     device = torch.device(device_name)
 
     from torchvision.models import vgg19
