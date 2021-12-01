@@ -21,7 +21,7 @@ from utils.image import show_cam_on_image, denorm
 
 
 def main():
-    data_dir = '/content/drive/MyDrive/boat_data'
+    data_dir = '/content/drive/MyDrive/boat_data/'
     classes = os.listdir(data_dir)
     print(classes)
     print(len(classes))
