@@ -163,7 +163,7 @@ def main():
 
     i = 0
     num_train_samples = 0
-    logging_path = './logs/'
+    logging_path = '/content/drive/MyDrive/logs/'
     logging_name = "boats"
     from torch.utils.tensorboard import SummaryWriter
     import datetime
