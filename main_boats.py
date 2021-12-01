@@ -270,7 +270,7 @@ def main():
 
                         one_heatmap = heatmap[t].squeeze().cpu().detach().numpy()
 
-                        one_augmented_im = torch.tensor(np.array(batch[0])).permute([0,2,3,1]).to(device)
+                        #one_augmented_im = torch.tensor(np.array(batch[0])).permute([0,2,3,1]).to(device)
                         one_masked_image = masked_image[t].detach().squeeze()
                         htm = deprocess_image(one_heatmap)
                         visualization, red_htm = show_cam_on_image(orig.cpu().detach().numpy(), htm, True)
