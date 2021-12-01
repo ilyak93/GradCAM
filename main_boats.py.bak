@@ -65,10 +65,8 @@ def main():
     show_image(*dataset[20])
 
     batch_size = 1
-    train_loader = DataLoader(train_ds, batch_size, shuffle=True, num_workers=0, pin_memory=True)
-    torch.manual_seed(torch.initial_seed())
-    orig_train_loader = DataLoader(orig_train_ds, batch_size, shuffle=True, num_workers=0, pin_memory=True)
-    torch.manual_seed(torch.initial_seed())
+    train_loader = DataLoader(train_ds, batch_size, shuffle=False, num_workers=0, pin_memory=True)
+    orig_train_loader = DataLoader(orig_train_ds, batch_size, shuffle=False, num_workers=0, pin_memory=True)
     val_loader = DataLoader(val_ds, batch_size, num_workers=0, pin_memory=True)
     test_loader = DataLoader(test_ds, batch_size, num_workers=0, pin_memory=True)
 
@@ -101,7 +99,6 @@ def main():
 
         def __iter__(self):
             """Yield a batch of data after moving it to device"""
-            torch.manual_seed(torch.initial_seed())
             for b in self.dl:
                 yield to_device(b, self.device)
 
